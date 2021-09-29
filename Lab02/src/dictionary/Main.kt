@@ -1,7 +1,8 @@
 package dictionary
 
 fun main(){
-    val dict: IDictionary = ListDictionary
+    val dict: IDictionary = DictionaryProvider.createDictionary(DictionaryType.TREE_SET)
+    dict.add("trabant")
     println("num of words: ${dict.size()}")
     var word: String?
     while(true){

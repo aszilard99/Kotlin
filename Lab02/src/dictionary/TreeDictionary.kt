@@ -1,19 +1,19 @@
 package dictionary
 
 import java.io.File
+import java.util.*
 
-object HashDictionary : IDictionary {
-    val words = HashSet<String>()
-    init {
-        //kell meg ellenorizni a file-t
-        File(IDictionary.fileName).readLines().forEach{(ListDictionary.add(it))}
+object TreeDictionary : IDictionary{
+    val words = TreeSet<String>()
+    init{
+        File(IDictionary.fileName).readLines().forEach{(TreeDictionary.add(it))}
     }
 
     override fun add(word: String): Boolean {
         if (find(word) == false){
             return words.add(word)
         }
-        else{
+        else {
             return false
         }
     }
